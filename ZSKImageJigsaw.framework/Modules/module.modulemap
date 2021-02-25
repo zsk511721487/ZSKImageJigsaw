@@ -1,0 +1,11 @@
+framework module ZSKImageJigsaw {
+  umbrella header "ZSKImageJigsaw.h"
+
+  export *
+  module * { export * }
+}
+
+module ZSKImageJigsaw.Swift {
+    header "ZSKImageJigsaw-Swift.h"
+    requires objc
+}

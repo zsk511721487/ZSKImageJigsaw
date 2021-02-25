@@ -1,5 +1,15 @@
 # ZSKImageJigsaw
 
+## cocoapods  install
+
+```
+pod 'ZSKImageJigsaw'
+```
+
+## usage
+
+### ZSKImageJigsaw init
+
 ```
 let showVC = ZSKImageJigsawVC()
         showVC.modalPresentationStyle = .fullScreen
@@ -8,7 +18,7 @@ let showVC = ZSKImageJigsawVC()
         self.present(showVC, animated: true, completion: nil)
 ```
 
-## delegate
+### delegate
 
 ```
 extension ViewController:ZSKImageJigsawDelegate {

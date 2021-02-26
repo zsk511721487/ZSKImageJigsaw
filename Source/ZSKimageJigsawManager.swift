@@ -26,8 +26,9 @@ class ZSKimageJigsawStyleItemsModel: Codable {
 
 class ZSKimageJigsawManager {
     public static func getZSKImageJisawData(key: String) -> [ZSKimageJigsawStyleModel] {
-        let path = Bundle.main.resourcePath ?? ""
-        let bundle = Bundle(path: path + "/ZSKImageJiasaw.bundle")
+        let current = Bundle(for: ZSKImageJigsawVC.self)
+        let nowUrl = current.url(forResource: "ZSKImageJiasaw", withExtension: "bundle")
+        let bundle = Bundle(url: nowUrl!)
         if let currentBundle = bundle {
             let jsonPath = "\(currentBundle.resourcePath!)/zskImageJigsawStyle.json"
             do{
@@ -53,8 +54,9 @@ class ZSKimageJigsawManager {
             imageName = key + ".png"
         }
         
-        let path = Bundle.main.resourcePath ?? ""
-        let bundle = Bundle(path: path + "/ZSKImageJiasaw.bundle")
+        let current = Bundle(for: ZSKImageJigsawVC.self)
+        let nowUrl = current.url(forResource: "ZSKImageJiasaw", withExtension: "bundle")
+        let bundle = Bundle(url: nowUrl!)
         if let currentBundle = bundle {
             let imagePath = "\(currentBundle.resourcePath!)/\(imageName)"
             return UIImage.init(contentsOfFile: imagePath)

@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZSKImageJigsaw"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "拼图功能实现"
   # spec.description  = <<-DESC
   #                 DESC
@@ -22,7 +22,9 @@ Pod::Spec.new do |spec|
   spec.resource  = "ZSKImageJiasaw.bundle"
   spec.source_files = "Source/*.swift"
   # spec.resources = "Resources/*.png"
+  spec.requires_arc = true
   spec.frameworks = 'UIKit','AVFoundation','Photos','MobileCoreServices'
+  spec.vendored_frameworks = "ZSKImageJiasaw.framework"
   spec.swift_version = '5.0'
 
 end

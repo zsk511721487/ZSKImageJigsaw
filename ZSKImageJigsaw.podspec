@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/zsk511721487/ZSKImageJigsaw.git", :tag => "0.0.1" }
   spec.resource  = "ZSKImageJiasaw.bundle"
-  spec.source_files = "Source/SwiftyJSON/*.swift"
+  spec.source_files = "Source/*.swift"
   # spec.resources = "Resources/*.png"
   spec.frameworks = 'UIKit','Foundation'
 

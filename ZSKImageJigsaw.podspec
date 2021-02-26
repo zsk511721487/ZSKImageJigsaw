@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZSKImageJigsaw"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "拼图功能实现"
   # spec.description  = <<-DESC
   #                 DESC
@@ -18,10 +18,11 @@ Pod::Spec.new do |spec|
   spec.author             = { "张少康" => "511721487@qq.com" }
   # spec.platform     = :ios
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/zsk511721487/ZSKImageJigsaw.git", :tag => "0.0.1" }
+  spec.source       = { :git => "https://github.com/zsk511721487/ZSKImageJigsaw.git", :tag => spec.version }
   spec.resource  = "ZSKImageJiasaw.bundle"
   spec.source_files = "Source/*.swift"
   # spec.resources = "Resources/*.png"
-  spec.frameworks = 'UIKit','Foundation'
+  spec.frameworks = 'UIKit','AVFoundation','Photos','MobileCoreServices'
+  spec.swift_version = '5.0'
 
 end

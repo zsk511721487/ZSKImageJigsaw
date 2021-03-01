@@ -116,6 +116,8 @@ public class ZSKImageJigsawVC: UIViewController {
         
         nav.finish = {
             DispatchQueue.main.async {
+                self.jiasawView.cleanItemStatue()
+                self.jointView.cleanAllStatus()
                 if self.delegate != nil {
                     self.delegate?.imageJigsaw(imageJigsaw: self, image: self.getCurrenStyleImage())
                     self.dismiss(animated: true, completion: nil)

@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/zsk511721487/ZSKImageJigsaw.git"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "张少康" => "511721487@qq.com" }
-  # spec.platform     = :ios
+  # spec.platform     = :dos
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/zsk511721487/ZSKImageJigsaw.git", :tag => spec.version }
   spec.resource  = "ZSKImageJiasaw.bundle"
@@ -24,7 +24,6 @@ Pod::Spec.new do |spec|
   # spec.resources = "Resources/*.png"
   spec.requires_arc = true
   spec.frameworks = 'UIKit','AVFoundation','Photos','MobileCoreServices'
-  spec.vendored_frameworks = "ZSKImageJiasaw.framework"
   spec.swift_version = '5.0'
 
 end

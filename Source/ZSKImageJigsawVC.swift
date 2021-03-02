@@ -242,7 +242,9 @@ public class ZSKImageJigsawVC: UIViewController {
         if images.count  == 2 {
             if delegate != nil {
                 delegate?.imagejiasawNotAllowDelete(imageJigsaw: self)
+                return
             }
+            return
         }else {
             if delegate != nil {
                 if delegate?.imageJiasawCanDelete(imageJigsaw: self, index: self.choseIndex) == false {

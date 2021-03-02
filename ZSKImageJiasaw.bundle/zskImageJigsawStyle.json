@@ -145,7 +145,7 @@
 			"select":"2-8_select",
 			"viewHeight":1,
 			"viewWidth":0.5,
-			"weight":1,
+			"weight":0,
 			"itemsFrames":[
 				{
 					"x":0,

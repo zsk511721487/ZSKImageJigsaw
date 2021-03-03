@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZSKImageJigsaw"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.7"
   spec.summary      = "拼图功能实现"
   # spec.description  = <<-DESC
   #                 DESC

@@ -116,6 +116,7 @@ public class ZSKImageJigsawVC: UIViewController {
         
         nav.finish = {
             DispatchQueue.main.async {
+                self.isCanEdit = false
                 self.jiasawView.cleanItemStatue()
                 self.jointView.cleanAllStatus()
                 if self.delegate != nil {
@@ -217,6 +218,10 @@ public class ZSKImageJigsawVC: UIViewController {
         if selectModel.weight == 1 {
             width = zskjigsaw_screen_width - 30
             height = (zskjigsaw_screen_width - 30) / selectModel.viewWidth
+            if height > originalHeight - 20 {
+                height = originalHeight - 20
+                width = height * selectModel.viewWidth
+            }
         }else {
             width = ZSKimageJigsawManager.getRealScaleSize(originalSize: weight, currentScale: selectModel.viewWidth)
             height = ZSKimageJigsawManager.getRealScaleSize(originalSize: weight, currentScale: selectModel.viewHeight)
@@ -244,7 +249,6 @@ public class ZSKImageJigsawVC: UIViewController {
                 delegate?.imagejiasawNotAllowDelete(imageJigsaw: self)
                 return
             }
-            return
         }else {
             if delegate != nil {
                 if delegate?.imageJiasawCanDelete(imageJigsaw: self, index: self.choseIndex) == false {

@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZSKImageJigsaw"
-  spec.version      = "0.0.7"
+  spec.version      = "0.0.9"
   spec.summary      = "拼图功能实现"
   # spec.description  = <<-DESC
   #                 DESC
@@ -19,9 +19,8 @@ Pod::Spec.new do |spec|
   # spec.platform     = :dos
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/zsk511721487/ZSKImageJigsaw.git", :tag => spec.version }
-  spec.resource  = "ZSKImageJiasaw.bundle"
-  spec.source_files = "Source/*.swift"
-  # spec.resources = "Resources/*.png"
+  spec.resource  = "ZSKImageJigsawDemo/CustomImageMannger/ZSKImageJigsaw/ZSKImageJiasaw.bundle"
+  spec.source_files = "ZSKImageJigsawDemo/CustomImageMannger/ZSKImageJigsaw/*.swift"
   spec.requires_arc = true
   spec.frameworks = 'UIKit','AVFoundation','Photos','MobileCoreServices'
   spec.swift_version = '5.0'

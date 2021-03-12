@@ -18,12 +18,9 @@ class ZSKJointCollectionViewCell: UICollectionViewCell {
     }()
     
     func updateSubviews(isSelect: Bool,image: UIImage?) {
-//        self.setNeedsLayout()
-//        self.layoutIfNeeded()
         if let img = image {
             showImageView.contentImageView.image = img
-            showImageView.choseBorderView.isHidden = !isSelect
-            showImageView.frame = self.bounds
+            showImageView.updataChoseStatus(isChose: isSelect)
         }
     }
     

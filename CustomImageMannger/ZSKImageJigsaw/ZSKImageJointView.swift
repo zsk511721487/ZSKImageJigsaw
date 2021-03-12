@@ -97,8 +97,6 @@ class ZSKImageJointView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .zsk_backgroundColor
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tap(tap:)))
-        collectionView.addGestureRecognizer(tap)
         let long = UILongPressGestureRecognizer(target: self, action: #selector(long(long:)))
         self.addSubview(collectionView)
         collectionView.addGestureRecognizer(long)
@@ -130,8 +128,7 @@ extension ZSKImageJointView: UICollectionViewDelegate, UICollectionViewDataSourc
             self.currentIndex = indexPath.row
             changeSelectStatus(isEdit: true)
         }
-        changeSelectStatus(isEdit: self.currentIndex != -1)
-        collectionView.reloadData()
+        self.collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

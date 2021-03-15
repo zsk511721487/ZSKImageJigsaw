@@ -45,13 +45,7 @@ public protocol ZSKImageJigsawDelegate: NSObjectProtocol {
 public class ZSKImageJigsawVC: UIViewController {
 
     //传入的图片集合
-    public var images: [UIImage] = [] {
-        didSet{
-            if images.count == 1 {
-                images.append(images[0])
-            }
-        }
-    }
+    public var images: [UIImage] = []
     
     public weak var delegate: ZSKImageJigsawDelegate?
     
@@ -144,6 +138,9 @@ public class ZSKImageJigsawVC: UIViewController {
     }
     
     fileprivate func getStyleArray() {
+        if images.count == 1 {
+            images.append(images[0])
+        }
         styleArray = ZSKimageJigsawManager.getZSKImageJisawData(key: "\(images.count)")
         createStyleView()
         createJointView()

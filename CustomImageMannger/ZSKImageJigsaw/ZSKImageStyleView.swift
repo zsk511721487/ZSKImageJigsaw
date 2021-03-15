@@ -59,6 +59,13 @@ class ZSKImageStyleView: UIView {
         return line
     }()
     
+    lazy var segmentationView: UIView = {
+        let line = UIView()
+        line.bounds = CGRect.init(x: 0, y: 0, width: zskjigsaw_screen_width, height: 0.5)
+        line.backgroundColor = .zsk_tertiaryTitleColr
+        return line
+    }()
+    
     lazy var jointView: UIView = {
         let view = UIView(frame: CGRect(x: 15, y: self.bounds.height - 55 - zskjigsaw_bottom_safe_height, width: zskjigsaw_screen_width - 59 - 15, height: 45))
         view.backgroundColor = .zsk_groupedBackgroundColor
@@ -135,9 +142,11 @@ class ZSKImageStyleView: UIView {
         self.addSubview(jointButton)
         self.addSubview(layoutButton)
         self.addSubview(collectionView)
+        self.addSubview(segmentationView)
         
         lineView.center = CGPoint(x: layoutButton.center.x, y: layoutButton.center.y + 25)
         lineView.bounds = CGRect(x: 0, y: 0, width: 33, height: 1.5)
+        segmentationView.center = CGPoint(x: self.center.x, y: lineView.center.y)
         self.addSubview(lineView)
         self.addSubview(jointView)
         

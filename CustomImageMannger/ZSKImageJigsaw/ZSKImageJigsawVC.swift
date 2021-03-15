@@ -68,6 +68,8 @@ public class ZSKImageJigsawVC: UIViewController {
     fileprivate var imagePickerVC: UIImagePickerController?
     
     fileprivate var choseIndex: Int = 0
+    
+    fileprivate var currentStyleIndex: Int = 0
         
     fileprivate var isCanEdit: Bool = false {
         didSet {
@@ -197,6 +199,7 @@ public class ZSKImageJigsawVC: UIViewController {
         styleView.selectIndex = { [weak self] index in
             guard let `self` = self else {return}
             self.jiasawView.styleModel = self.styleArray![index]
+            self.currentStyleIndex = index
             self.updataJiasawViewFrame(currentIndex: index)
         }
         
@@ -207,9 +210,9 @@ public class ZSKImageJigsawVC: UIViewController {
         
         view.addSubview(styleView)
         
-        styleView.updateSubViews(items: styleArray!, currentIndex: 0, jointImage: images[0],isJoint:self.isJonit)
+        styleView.updateSubViews(items: styleArray!, currentIndex: self.currentStyleIndex, jointImage: images[0],isJoint:self.isJonit)
         
-        self.updataJiasawViewFrame(currentIndex: 0)
+        self.updataJiasawViewFrame(currentIndex: self.currentStyleIndex)
     }
     
     fileprivate func updataJiasawViewFrame(currentIndex: Int) {

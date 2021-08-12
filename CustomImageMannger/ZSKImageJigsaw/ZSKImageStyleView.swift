@@ -67,7 +67,7 @@ class ZSKImageStyleView: UIView {
     }()
     
     lazy var jointView: UIView = {
-        let view = UIView(frame: CGRect(x: 15, y: self.bounds.height - 55 - zskjigsaw_bottom_safe_height, width: zskjigsaw_screen_width - 59 - 15, height: 45))
+        let view = UIView(frame: CGRect(x: 15, y: self.bounds.height - 55 - zskjigsaw_bottom_safe_height, width: zskjigsaw_screen_width - 30, height: 45))
         view.backgroundColor = .zsk_groupedBackgroundColor
         view.isHidden = true
         view.addSubview(self.jointImageView)

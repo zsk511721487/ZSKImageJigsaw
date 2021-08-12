@@ -181,10 +181,12 @@ class ZSKImageJigsawView: UIView,UIGestureRecognizerDelegate {
                 moveModel = nil
             }else {
                 if imageExchange != nil {
-                    imageExchange!(moveModel!.model!.index,moveToModel!.model!.index)
+                    if moveModel != nil {
+                        imageExchange!(moveModel!.model!.index,moveToModel!.model!.index)
+                        (images[moveModel!.model!.index], images[moveToModel!.model!.index]) = (images[moveToModel!.model!.index],images[moveModel!.model!.index])
+                        self.updateViews()
+                    }
                 }
-                (images[moveModel!.model!.index], images[moveToModel!.model!.index]) = (images[moveToModel!.model!.index],images[moveModel!.model!.index])
-                self.updateViews()
             }
         }
                 
